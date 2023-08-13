@@ -21,8 +21,6 @@ func apply_inputs():
 
 	var direction = Input.get_axis("move_left", "move_right")
 
-	print(is_on_floor())
-
 	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
