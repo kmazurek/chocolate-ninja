@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dppl8ialv5cxq"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_jysht"]
+[ext_resource type="Texture2D" uid="uid://boe8anvq0638e" path="res://icon.svg" id="2_lhy5c"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygj60"]
+resource_name = "Godot Logo"
+texture = ExtResource("2_lhy5c")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_fwsjr"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ygj60")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r60eh"]
+radius = 55.0
+height = 122.0
+
+[node name="root" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_fwsjr")
+format = 2
+layer_0/tile_data = PackedInt32Array(196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 196605, 0, 0, 196604, 0, 0, 196603, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0)
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_jysht")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+texture = ExtResource("2_lhy5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_r60eh")
