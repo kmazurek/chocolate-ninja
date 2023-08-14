@@ -1,11 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxfyx7ni12ro8"]
+[gd_scene load_steps=7 format=3 uid="uid://bxfyx7ni12ro8"]
 
 [ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_wms8m"]
-[ext_resource type="Texture2D" uid="uid://boe8anvq0638e" path="res://icon.svg" id="2_bc1ga"]
+[ext_resource type="Texture2D" uid="uid://ced4onaoach3l" path="res://assets/ninja_tiles.png" id="2_a7t88"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki7np"]
+atlas = ExtResource("2_a7t88")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lsgf"]
+atlas = ExtResource("2_a7t88")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rp1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki7np")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lsgf")
+}],
+"loop": true,
+"name": &"white",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hkfos"]
-radius = 55.0
-height = 122.0
+radius = 6.0
+height = 16.0
 
 [node name="player" type="Node2D"]
 
@@ -13,11 +40,12 @@ height = 122.0
 position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_wms8m")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_0rp1c")
+animation = &"black"
+
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(2.08165e-12, 2.08165e-12)
-
-[node name="Sprite2D" type="Sprite2D" parent="player"]
-texture = ExtResource("2_bc1ga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(0, 1)
