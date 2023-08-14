@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1pbqfj0swfg4"
-path="res://.godot/imported/light_tiles.png-917eb3e56103678e83c4438d3afdd0b6.ctex"
+uid="uid://wilcpn28hj56"
+path="res://.godot/imported/chocolate_light_placeholder.png-4ab8fa353a8101304f8ed01ba7fcad62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light_tiles.png"
-dest_files=["res://.godot/imported/light_tiles.png-917eb3e56103678e83c4438d3afdd0b6.ctex"]
+source_file="res://assets/placeholders/chocolate_light_placeholder.png"
+dest_files=["res://.godot/imported/chocolate_light_placeholder.png-4ab8fa353a8101304f8ed01ba7fcad62.ctex"]
 
 [params]
 

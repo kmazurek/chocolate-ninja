@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cunl4v2cwgw0r"
-path="res://.godot/imported/guard_tiles.png-dbc00bc3883277978233de1eecb7dca0.ctex"
+uid="uid://b87hh3fkx6pyq"
+path="res://.godot/imported/light_tiles.png-270a98c09fee2f2c7746a03f24f4d04f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/guard_tiles.png"
-dest_files=["res://.godot/imported/guard_tiles.png-dbc00bc3883277978233de1eecb7dca0.ctex"]
+source_file="res://assets/tiles/light_tiles.png"
+dest_files=["res://.godot/imported/light_tiles.png-270a98c09fee2f2c7746a03f24f4d04f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bko7jkgrnus4i"
-path="res://.godot/imported/chocolate_tiles.png-a9d9eb3bfa9c457b75113084a9cf562a.ctex"
+uid="uid://dcjy2djw3o6xu"
+path="res://.godot/imported/Door_open.png-647386909bac5c92341e69fb5d08ab80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chocolate_tiles.png"
-dest_files=["res://.godot/imported/chocolate_tiles.png-a9d9eb3bfa9c457b75113084a9cf562a.ctex"]
+source_file="res://assets/placeholders/Door_open.png"
+dest_files=["res://.godot/imported/Door_open.png-647386909bac5c92341e69fb5d08ab80.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkhg5xvjl8400"
-path="res://.godot/imported/Door_tiles.png-315e6470b365431c9563b8e2de8693ae.ctex"
+uid="uid://sqcici1m7lc4"
+path="res://.godot/imported/ninja_dark_placeholder.png-6fc6f0c0a5e8a1afe2074e606ca0d6a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Door_tiles.png"
-dest_files=["res://.godot/imported/Door_tiles.png-315e6470b365431c9563b8e2de8693ae.ctex"]
+source_file="res://assets/placeholders/ninja_dark_placeholder.png"
+dest_files=["res://.godot/imported/ninja_dark_placeholder.png-6fc6f0c0a5e8a1afe2074e606ca0d6a7.ctex"]
 
 [params]
 

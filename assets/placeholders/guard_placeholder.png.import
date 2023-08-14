@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0yhm62ye045u"
-path="res://.godot/imported/ladder_tiles.png-6448fd42e2f576a5c2cbfc3a22f46f04.ctex"
+uid="uid://csvx2xu8npdj"
+path="res://.godot/imported/guard_placeholder.png-a06f41850fb8d2f276499a34fafd9045.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/ladder_tiles.png"
-dest_files=["res://.godot/imported/ladder_tiles.png-6448fd42e2f576a5c2cbfc3a22f46f04.ctex"]
+source_file="res://assets/placeholders/guard_placeholder.png"
+dest_files=["res://.godot/imported/guard_placeholder.png-a06f41850fb8d2f276499a34fafd9045.ctex"]
 
 [params]
 

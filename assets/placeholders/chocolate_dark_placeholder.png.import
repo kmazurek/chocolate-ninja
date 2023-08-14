@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ced4onaoach3l"
-path="res://.godot/imported/ninja_tiles.png-b81ffa0453a374a9743414a296d2383c.ctex"
+uid="uid://dxxa0bpleqtrl"
+path="res://.godot/imported/chocolate_dark_placeholder.png-fa5531e78637557ae6ffa0fda9b356bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ninja_tiles.png"
-dest_files=["res://.godot/imported/ninja_tiles.png-b81ffa0453a374a9743414a296d2383c.ctex"]
+source_file="res://assets/placeholders/chocolate_dark_placeholder.png"
+dest_files=["res://.godot/imported/chocolate_dark_placeholder.png-fa5531e78637557ae6ffa0fda9b356bf.ctex"]
 
 [params]
 
