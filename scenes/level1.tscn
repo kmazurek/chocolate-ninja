@@ -1,27 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dppl8ialv5cxq"]
+[gd_scene load_steps=2 format=3 uid="uid://bqhxcvbs5jy3b"]
 
-[ext_resource type="PackedScene" uid="uid://bxfyx7ni12ro8" path="res://scenes/entities/player.tscn" id="2_2hdp3"]
-[ext_resource type="Texture2D" uid="uid://boe8anvq0638e" path="res://icon.svg" id="2_lhy5c"]
+[ext_resource type="PackedScene" uid="uid://bwkh53lo7kuxe" path="res://scenes/tile_editor.tscn" id="1_6wpi1"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygj60"]
-resource_name = "Godot Logo"
-texture = ExtResource("2_lhy5c")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+[node name="tile_editor" instance=ExtResource("1_6wpi1")]
 
-[sub_resource type="TileSet" id="TileSet_fwsjr"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ygj60")
-
-[node name="level1" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_fwsjr")
-format = 2
-layer_0/tile_data = PackedInt32Array(196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 196605, 0, 0, 196604, 0, 0, 196603, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0)
-
-[node name="player" parent="." instance=ExtResource("2_2hdp3")]
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(196605, 131072, 0, 196606, 196608, 0, 196607, 196608, 0, 131072, 196608, 0, 131073, 196608, 0, 131074, 262144, 0, -1, 1, 65536)
