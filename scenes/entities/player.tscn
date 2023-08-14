@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5v7sxvk7616q"]
+[gd_scene load_steps=4 format=3 uid="uid://bxfyx7ni12ro8"]
 
-[ext_resource type="Script" path="res://scenes/prefabs/player.gd" id="1_qnr6s"]
+[ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_wms8m"]
 [ext_resource type="Texture2D" uid="uid://boe8anvq0638e" path="res://icon.svg" id="2_bc1ga"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hkfos"]
@@ -11,7 +11,7 @@ height = 122.0
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-script = ExtResource("1_qnr6s")
+script = ExtResource("1_wms8m")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(2.08165e-12, 2.08165e-12)
