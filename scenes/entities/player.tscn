@@ -28,17 +28,17 @@ size = Vector2(15.9375, 15)
 
 [node name="player" type="Node2D"]
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_wms8m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_0rp1c")
 animation = &"white"
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="CollisionShape2D_right_foot" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D_right_foot" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.03125, 0.5)
 shape = SubResource("RectangleShape2D_dtaf0")

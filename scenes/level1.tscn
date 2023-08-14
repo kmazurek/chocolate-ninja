@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqhxcvbs5jy3b"]
+[gd_scene load_steps=3 format=3 uid="uid://bqhxcvbs5jy3b"]
 
 [ext_resource type="PackedScene" uid="uid://bwkh53lo7kuxe" path="res://scenes/tile_editor.tscn" id="1_6wpi1"]
+[ext_resource type="Script" path="res://scenes/level1.gd" id="2_v5kee"]
 
 [node name="tile_editor" instance=ExtResource("1_6wpi1")]
+script = ExtResource("2_v5kee")
 
 [node name="TileMap" parent="." index="0"]
 layer_0/tile_data = PackedInt32Array(196605, 131072, 0, 196606, 196608, 0, 196607, 196608, 0, 131072, 196608, 0, 131073, 196608, 0, 131074, 262144, 0, -1, 1, 65536, 65538, 1, 131072)
+
+[connection signal="end_reached" from="." to="." method="_on_end_reached"]
