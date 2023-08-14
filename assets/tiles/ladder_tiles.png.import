@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bir5087asubl0"
-path="res://.godot/imported/ladder_tiles.png-c5b1ce5e57671172d68a289fce92e0eb.ctex"
+path="res://.godot/imported/ladder_tiles.png-6448fd42e2f576a5c2cbfc3a22f46f04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ladder_tiles.png"
-dest_files=["res://.godot/imported/ladder_tiles.png-c5b1ce5e57671172d68a289fce92e0eb.ctex"]
+source_file="res://assets/tiles/ladder_tiles.png"
+dest_files=["res://.godot/imported/ladder_tiles.png-6448fd42e2f576a5c2cbfc3a22f46f04.ctex"]
 
 [params]
 
