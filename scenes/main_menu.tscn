@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dithlpiiqvbqk"]
+[gd_scene load_steps=4 format=3 uid="uid://dithlpiiqvbqk"]
 
 [ext_resource type="Script" path="res://scripts/button_start.gd" id="1_ex38m"]
+[ext_resource type="Script" path="res://scripts/button_exit.gd" id="2_0px5u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_74mk5"]
 font_size = 128
@@ -54,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Exit game"
-script = ExtResource("1_ex38m")
+script = ExtResource("2_0px5u")
 
 [node name="title" type="Label" parent="CanvasLayer"]
 anchors_preset = 15
