@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=8 format=3 uid="uid://b154r2dke777u"]
 
-[ext_resource type="Texture2D" uid="uid://ce7ffhmjjk7qr" path="res://assets/tiles/ground_tiles.png" id="1_s7ax2"]
+[ext_resource type="Texture2D" uid="uid://dwejeuo4mdnt8" path="res://assets/tiles/ground_tiles.png" id="1_s7ax2"]
 [ext_resource type="PackedScene" uid="uid://bxfyx7ni12ro8" path="res://scenes/entities/player.tscn" id="2_q44et"]
 [ext_resource type="Texture2D" uid="uid://b0yhm62ye045u" path="res://assets/tiles/ladder_tiles.png" id="3_fe4wi"]
 
