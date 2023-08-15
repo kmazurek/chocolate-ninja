@@ -1,21 +1,27 @@
 extends Node2D
 
-signal end_reached
+
+	
+@export var next_level: String
+
+var end: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	
-	
-var end: Area2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if end == null:
-		end = $TileMap/end/Area2D
-		end.connect("body_entered", _on_end_entered)
+		end = $TileMap/end
+		end.connect("end_entered", _on_end_entered)
+	
+	var chocolate = get_tree().get_nodes_in_group("chocolate")
+	print(next_level)
+	if chocolate.size() == 0:
+		get_tree().call_group("end", "open")
+	
 
-func _on_end_entered(body: CharacterBody2D): 
-	if body.get_parent().name == "player":
-		end_reached.emit()
+func _on_end_entered(): 
+	get_tree().change_scene_to_file(next_level)	
 	

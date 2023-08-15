@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0u0da0fssfr4"]
+[gd_scene load_steps=7 format=3 uid="uid://d0u0da0fssfr4"]
 
+[ext_resource type="Script" path="res://scripts/end.gd" id="1_4j0vq"]
 [ext_resource type="Texture2D" uid="uid://dkwieuenpq51l" path="res://assets/placeholders/Door_closed.png" id="2_uhyh3"]
 [ext_resource type="Texture2D" uid="uid://dcjy2djw3o6xu" path="res://assets/placeholders/Door_open.png" id="3_ff2av"]
+[ext_resource type="Script" path="res://scripts/end_animation.gd" id="4_c87lj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ovxm"]
 animations = [{
@@ -26,13 +28,18 @@ animations = [{
 size = Vector2(14, 15)
 
 [node name="end" type="Node2D"]
+script = ExtResource("1_4j0vq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_1ovxm")
 animation = &"closed"
+script = ExtResource("4_c87lj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_mq75j")
+
+[connection signal="door_opened" from="." to="Area2D/AnimatedSprite2D" method="_on_end_door_opened"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

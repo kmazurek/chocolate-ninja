@@ -14,5 +14,3 @@ layer_0/tile_data = PackedInt32Array(0, 1, 65536, 65536, 131072, 1, 65537, 0, 3,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, 2.08165e-12)
-
-[connection signal="end_reached" from="." to="." method="_on_end_reached"]
