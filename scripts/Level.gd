@@ -5,6 +5,7 @@ extends Node2D
 @export var next_level: String
 
 var end: Node2D
+var done: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +18,8 @@ func _process(delta):
 		end.connect("end_entered", _on_end_entered)
 	
 	var chocolate = get_tree().get_nodes_in_group("chocolate")
-	if chocolate.size() == 0:
+	if chocolate.size() == 0 and not done:
+		done = true
 		get_tree().call_group("end", "open")
 	
 
