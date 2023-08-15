@@ -17,7 +17,6 @@ func _process(delta):
 		end.connect("end_entered", _on_end_entered)
 	
 	var chocolate = get_tree().get_nodes_in_group("chocolate")
-	print(next_level)
 	if chocolate.size() == 0:
 		get_tree().call_group("end", "open")
 	
