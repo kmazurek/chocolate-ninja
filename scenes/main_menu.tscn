@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dithlpiiqvbqk"]
 
-[ext_resource type="Script" path="res://scripts/button_start.gd" id="1_ex38m"]
-[ext_resource type="Script" path="res://scripts/button_exit.gd" id="2_0px5u"]
 [ext_resource type="FontFile" uid="uid://c1y1goxw5las4" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_dpewo"]
 [ext_resource type="FontFile" uid="uid://14evxjlcwkfu" path="res://assets/fonts/monciaki-sans-bold.ttf" id="3_2xi88"]
+[ext_resource type="Script" path="res://scripts/main_menu_start.gd" id="3_h1oi5"]
+[ext_resource type="Script" path="res://scripts/main_menu_exit.gd" id="4_ijd13"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_74mk5"]
 font = ExtResource("3_2xi88")
@@ -54,7 +54,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_dpewo")
 theme_override_font_sizes/font_size = 32
 text = "Start game"
-script = ExtResource("1_ex38m")
+script = ExtResource("3_h1oi5")
 
 [node name="button_exit" type="MenuButton" parent="CanvasLayer/menu"]
 layout_mode = 1
@@ -72,4 +72,4 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_dpewo")
 theme_override_font_sizes/font_size = 32
 text = "Exit game"
-script = ExtResource("2_0px5u")
+script = ExtResource("4_ijd13")
