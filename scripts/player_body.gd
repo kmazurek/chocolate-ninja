@@ -7,8 +7,6 @@ signal direction_changed(direction: int)
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
-
 var tileMap: TileMap
 
 func _ready():
