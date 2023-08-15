@@ -20,10 +20,6 @@ func _process(_delta):
 func _physics_process(delta):
 	apply_gravity(delta)
 	apply_inputs()
-	
-	if velocity.x != 0:
-		animation.flip_h = velocity.x < 0
-		
 	move_and_slide()
 
 
