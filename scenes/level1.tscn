@@ -11,4 +11,7 @@ tile_set = ExtResource("2_comg1")
 format = 2
 layer_0/tile_data = PackedInt32Array(196605, 131072, 0, 196606, 196608, 0, 196607, 196608, 0, 131072, 196608, 0, 131073, 196608, 0, 131074, 262144, 0, -1, 1, 65536, 65538, 1, 131072)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
 [connection signal="end_reached" from="." to="." method="_on_end_reached"]

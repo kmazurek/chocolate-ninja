@@ -8,3 +8,6 @@
 tile_set = ExtResource("1_hf4sa")
 format = 2
 layer_0/tile_data = PackedInt32Array(262140, 65536, 0, 262141, 65536, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 65535, 1, 65536)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
