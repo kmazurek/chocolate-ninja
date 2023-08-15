@@ -1,13 +1,15 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://b154r2dke777u"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://b154r2dke777u"]
 
 [ext_resource type="Texture2D" uid="uid://dwejeuo4mdnt8" path="res://assets/tiles/ground_tiles.png" id="1_s7ax2"]
 [ext_resource type="PackedScene" uid="uid://bxfyx7ni12ro8" path="res://scenes/entities/player.tscn" id="2_q44et"]
 [ext_resource type="Texture2D" uid="uid://b0yhm62ye045u" path="res://assets/tiles/ladder_tiles.png" id="3_fe4wi"]
 [ext_resource type="PackedScene" uid="uid://d0u0da0fssfr4" path="res://scenes/entities/end.tscn" id="3_l6lce"]
+[ext_resource type="Texture2D" uid="uid://b87hh3fkx6pyq" path="res://assets/tiles/light_tiles.png" id="4_edni1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ftva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u30b3"]
+resource_name = "platforms"
 texture = ExtResource("1_s7ax2")
 1:0/0 = 0
 1:0/0/terrain_set = 0
@@ -357,7 +359,55 @@ resource_name = "entities"
 scenes/1/scene = ExtResource("2_q44et")
 scenes/2/scene = ExtResource("3_l6lce")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ug7ft"]
+resource_name = "light"
+texture = ExtResource("4_edni1")
+1:0/0 = 0
+1:0/0/z_index = -1
+1:0/0/terrain_set = 1
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/terrains_peering_bit/right_side = 2
+1:0/0/terrains_peering_bit/top_side = 2
+1:0/0/custom_data_0 = "light"
+2:0/0 = 0
+2:0/0/z_index = -1
+2:0/0/terrain_set = 1
+2:0/0/terrain = 2
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/terrains_peering_bit/right_side = 2
+2:0/0/terrains_peering_bit/bottom_side = 2
+2:0/0/terrains_peering_bit/left_side = 2
+2:0/0/terrains_peering_bit/top_side = 2
+2:0/0/custom_data_0 = "light"
+0:1/0 = 0
+0:1/0/z_index = -1
+0:1/0/terrain_set = 1
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/terrains_peering_bit/bottom_side = 2
+0:1/0/terrains_peering_bit/left_side = 2
+0:1/0/custom_data_0 = "light"
+1:1/0 = 0
+1:1/0/z_index = -1
+1:1/0/terrain_set = 1
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/terrains_peering_bit/left_side = 2
+1:1/0/terrains_peering_bit/top_side = 2
+1:1/0/custom_data_0 = "light"
+2:1/0 = 0
+2:1/0/z_index = -1
+2:1/0/terrain_set = 1
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/terrains_peering_bit/right_side = 2
+2:1/0/terrains_peering_bit/bottom_side = 2
+2:1/0/custom_data_0 = "light"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cntd7"]
+resource_name = "ladders"
 texture = ExtResource("3_fe4wi")
 1:0/0 = 0
 1:0/0/terrain_set = 1
@@ -388,6 +438,11 @@ terrain_set_1/terrain_0/name = "bridges"
 terrain_set_1/terrain_0/color = Color(0.305882, 0.286275, 0.815686, 1)
 terrain_set_1/terrain_1/name = "ladders"
 terrain_set_1/terrain_1/color = Color(0.733333, 0.25098, 0.282353, 1)
+terrain_set_1/terrain_2/name = "light"
+terrain_set_1/terrain_2/color = Color(0.835294, 0.152941, 0.415686, 1)
+custom_data_layer_0/name = "shade"
+custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_u30b3")
 sources/1 = SubResource("TileSetScenesCollectionSource_2evu1")
 sources/3 = SubResource("TileSetAtlasSource_cntd7")
+sources/2 = SubResource("TileSetAtlasSource_ug7ft")

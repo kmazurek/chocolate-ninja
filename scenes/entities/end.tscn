@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0u0da0fssfr4"]
 
-[ext_resource type="Script" path="res://scenes/entities/end.gd" id="1_4j0vq"]
+[ext_resource type="Script" path="res://scripts/end.gd" id="1_4j0vq"]
 [ext_resource type="Texture2D" uid="uid://dkwieuenpq51l" path="res://assets/placeholders/Door_closed.png" id="2_uhyh3"]
 [ext_resource type="Texture2D" uid="uid://dcjy2djw3o6xu" path="res://assets/placeholders/Door_open.png" id="3_ff2av"]
 

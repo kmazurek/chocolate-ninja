@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxfyx7ni12ro8"]
 
-[ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_wms8m"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8h0f1"]
 [ext_resource type="Texture2D" uid="uid://sqcici1m7lc4" path="res://assets/placeholders/ninja_dark_placeholder.png" id="2_dnecq"]
 [ext_resource type="Script" path="res://scripts/player_body.gd" id="2_v1kv1"]
 [ext_resource type="Texture2D" uid="uid://dkul7gdrjdkkk" path="res://assets/placeholders/ninja_light_placeholder.png" id="3_k6qlh"]
@@ -29,7 +29,7 @@ animations = [{
 size = Vector2(15.9375, 15)
 
 [node name="player" type="Node2D"]
-script = ExtResource("1_wms8m")
+script = ExtResource("1_8h0f1")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -41,7 +41,7 @@ animation = &"white"
 script = ExtResource("5_toyho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.03125, 0.5)
+position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_dtaf0")
 
 [connection signal="direction_changed" from="CharacterBody2D" to="CharacterBody2D/AnimatedSprite2D" method="_on_character_body_2d_direction_changed"]
