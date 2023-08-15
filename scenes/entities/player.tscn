@@ -39,6 +39,6 @@ animation = &"white"
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="CollisionShape2D_right_foot" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.03125, 0.5)
 shape = SubResource("RectangleShape2D_dtaf0")

@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 320
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -23,6 +24,7 @@ func apply_inputs():
 
 	if direction != 0:
 		velocity.x = direction * SPEED
+		animation.flip_h = direction == -1
 	else:
 		velocity.x = 0
 
