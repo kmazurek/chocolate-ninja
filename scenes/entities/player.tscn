@@ -42,3 +42,5 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.03125, 0.5)
 shape = SubResource("RectangleShape2D_dtaf0")
+
+[connection signal="direction_changed" from="CharacterBody2D" to="CharacterBody2D" method="_on_direction_changed"]

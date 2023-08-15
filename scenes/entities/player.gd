@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 160
 const JUMP_VELOCITY = 320
 
+signal direction_changed(direction: int)
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
@@ -10,6 +12,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	apply_gravity(delta)
 	apply_inputs()
+	
+	if velocity.x != 0:
+		animation.flip_h = velocity.x < 0
+		
 	move_and_slide()
 
 
@@ -21,16 +27,19 @@ func apply_inputs():
 		velocity.y = -JUMP_VELOCITY
 
 	var direction = Input.get_axis("move_left", "move_right")
+	var velocity_x = direction * SPEED
+	var is_direction_different  = sign(velocity_x) != sign(velocity.x)
 
-	if direction != 0:
-		velocity.x = direction * SPEED
-		animation.flip_h = direction == -1
-	else:
-		velocity.x = 0
-
+	velocity.x = velocity_x
+	if (is_direction_different and direction != 0):
+		direction_changed.emit(direction)
 
 func apply_gravity(delta: float):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
 		velocity.y = 0
+
+
+func _on_direction_changed(direction: int):
+	animation.flip_h = direction == -1
