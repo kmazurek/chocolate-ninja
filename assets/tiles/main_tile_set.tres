@@ -1,10 +1,12 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://b154r2dke777u"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://b154r2dke777u"]
 
-[ext_resource type="Texture2D" uid="uid://dwejeuo4mdnt8" path="res://assets/tiles/ground_tiles.png" id="1_s7ax2"]
+[ext_resource type="Texture2D" uid="uid://ce7ffhmjjk7qr" path="res://assets/tiles/ground_tiles.png" id="1_s7ax2"]
 [ext_resource type="PackedScene" uid="uid://bxfyx7ni12ro8" path="res://scenes/entities/player.tscn" id="2_q44et"]
 [ext_resource type="Texture2D" uid="uid://b0yhm62ye045u" path="res://assets/tiles/ladder_tiles.png" id="3_fe4wi"]
 [ext_resource type="PackedScene" uid="uid://d0u0da0fssfr4" path="res://scenes/entities/end.tscn" id="3_l6lce"]
 [ext_resource type="Texture2D" uid="uid://b87hh3fkx6pyq" path="res://assets/tiles/light_tiles.png" id="4_edni1"]
+[ext_resource type="PackedScene" uid="uid://cdq1u214dml8o" path="res://scenes/entities/chocolate_dark.tscn" id="4_p5qie"]
+[ext_resource type="PackedScene" uid="uid://bmpguffcyry6o" path="res://scenes/entities/chocolate_light.tscn" id="5_6qc3d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ftva"]
 
@@ -358,6 +360,8 @@ texture = ExtResource("1_s7ax2")
 resource_name = "entities"
 scenes/1/scene = ExtResource("2_q44et")
 scenes/2/scene = ExtResource("3_l6lce")
+scenes/3/scene = ExtResource("4_p5qie")
+scenes/4/scene = ExtResource("5_6qc3d")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ug7ft"]
 resource_name = "light"

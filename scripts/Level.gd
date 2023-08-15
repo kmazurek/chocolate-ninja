@@ -6,15 +6,16 @@ signal end_reached
 func _ready():
 	pass
 	
-
+	
+var end: Area2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var player: CharacterBody2D = $TileMap/player/CharacterBody2D
-	var end: StaticBody2D  = $TileMap/end/StaticBody2D
+	if end == null:
+		end = $TileMap/end/Area2D
+		end.connect("body_entered", _on_end_entered)
+
+func _on_end_entered(body: CharacterBody2D): 
+	if body.get_parent().name == "player":
+		end_reached.emit()
 	
-	for i in player.get_slide_collision_count():
-		var collision = player.get_slide_collision(i)
-		
-		if collision.get_collider_rid() == end.get_rid():
-			end_reached.emit()

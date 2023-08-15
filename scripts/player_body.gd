@@ -30,10 +30,10 @@ func apply_inputs():
 
 	var direction = Input.get_axis("move_left", "move_right")
 	var velocity_x = direction * SPEED
-	var is_direction_different  = sign(velocity_x) != sign(velocity.x)
-
+	var is_direction_different  = sign(velocity_x) != sign(velocity.x) and direction != 0
+	
 	velocity.x = velocity_x
-	if (is_direction_different and direction != 0):
+	if (is_direction_different):
 		direction_changed.emit(direction)
 
 func apply_gravity(delta: float):

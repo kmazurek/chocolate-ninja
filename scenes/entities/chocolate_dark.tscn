@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdq1u214dml8o"]
+
+[ext_resource type="Script" path="res://scripts/chocolate.gd" id="1_bvfqf"]
+[ext_resource type="Texture2D" uid="uid://dxxa0bpleqtrl" path="res://assets/placeholders/chocolate_dark_placeholder.png" id="1_svo7w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu05u"]
+radius = 5.0
+height = 14.0
+
+[node name="chocolate_dark" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_bvfqf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_svo7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_fu05u")
