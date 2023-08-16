@@ -20,5 +20,4 @@ func eat_chocolate(c: Area2D):
 				color = "dark"
 	ate_chocolate.emit(color)
 	c.queue_free()
-	c.remove_from_group("chocolate")
 
