@@ -50,5 +50,4 @@ func check_light_shade():
 		print(shade)
 
 func eat_chocolate(c: String):
-	print(c)
 	ate_chocolate.emit(c)
