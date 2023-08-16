@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 160
 const JUMP_VELOCITY = 320
 
+signal ate_chocolate(c: String)
 signal direction_changed(direction: int)
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -50,3 +51,7 @@ func check_light_shade():
 	if tileData:
 		var shade = tileData.get_custom_data(Common.DataLayer_Shade)
 		print(shade)
+
+func eat_chocolate(c: String):
+	print(c)
+	ate_chocolate.emit(c)
