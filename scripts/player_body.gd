@@ -4,7 +4,6 @@ const SPEED = 160
 const JUMP_VELOCITY = 320
 
 signal ate_chocolate(c: String)
-signal direction_changed(direction: int)
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -30,12 +29,10 @@ func apply_inputs():
 		velocity.y = -JUMP_VELOCITY
 
 	var direction = Input.get_axis("move_left", "move_right")
-	var velocity_x = direction * SPEED
-	var is_direction_different  = sign(velocity_x) != sign(velocity.x) and direction != 0
+	velocity.x = direction * SPEED
 	
-	velocity.x = velocity_x
-	if (is_direction_different):
-		direction_changed.emit(direction)
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = direction != 1
 
 func apply_gravity(delta: float):
 	if not is_on_floor():

@@ -3,7 +3,7 @@ extends Node2D
 var color: String = "light"
 signal ate_chocolate(c: String)
 
-@onready var body = $CharacterBody2D
+@onready var body = $body
 
 func _process(delta):
 	var chocolate = get_tree().get_nodes_in_group("chocolate")
