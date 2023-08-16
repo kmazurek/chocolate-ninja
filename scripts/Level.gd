@@ -23,6 +23,7 @@ func _process(delta):
 		get_tree().call_group("end", "open")
 	
 
-func _on_end_entered(): 
-	get_tree().change_scene_to_file(next_level)	
+func _on_end_entered():
+	if done:
+		get_tree().change_scene_to_file(next_level)	
 	
