@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctngloxjnb2b6"]
+
+[ext_resource type="Script" path="res://scripts/guard_route.gd" id="1_4paal"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u5fhn"]
+a = Vector2(-8, 2.08165e-12)
+b = Vector2(8, 2.08165e-12)
+
+[node name="route" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_4paal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_u5fhn")

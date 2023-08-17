@@ -24,5 +24,3 @@ script = ExtResource("3_51uur")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-29, 39)
 shape = SubResource("RectangleShape2D_618ve")
-
-[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/AnimatedSprite2D" method="_on_player_ate_chocolate" flags=18]
