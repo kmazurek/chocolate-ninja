@@ -11,7 +11,7 @@ func _ready():
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu05u"]
-radius = 5.0
+radius = 4.0
 height = 14.0
 
 [node name="chocolate_dark" type="Node2D"]
@@ -26,4 +26,5 @@ autoplay = "idle"
 script = SubResource("GDScript_ytc8d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_fu05u")

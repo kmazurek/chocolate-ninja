@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtaf0"]
-size = Vector2(15.9375, 15)
+size = Vector2(14.4844, 13)
 
 [node name="player" type="Node2D"]
 script = ExtResource("1_8h0f1")
@@ -41,7 +41,7 @@ animation = &"light"
 script = ExtResource("5_toyho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
-position = Vector2(2.08165e-12, 2.08165e-12)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_dtaf0")
 
 [connection signal="ate_chocolate" from="." to="body/AnimatedSprite2D" method="_on_player_ate_chocolate"]
