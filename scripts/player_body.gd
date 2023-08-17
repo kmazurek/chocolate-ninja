@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 var is_jumping = false
 
-const SPEED = 160
+const SPEED = 130
 const JUMP_STOP_SPEED = -60
-const JUMP_VELOCITY = -320
+const JUMP_VELOCITY = -260
 const MAX_FALL_SPEED = 180
 
 
