@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b154r2dke777u" path="res://assets/tiles/main_tile_set.tres" id="1_71oka"]
 [ext_resource type="PackedScene" uid="uid://y04jbmj15ob4" path="res://scenes/debug_ui.tscn" id="2_vmwsk"]
-[ext_resource type="Script" path="res://scripts/guard_route.gd" id="3_51uur"]
+[ext_resource type="Script" path="res://scripts/entities/guard_route.gd" id="3_51uur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_618ve"]
 size = Vector2(90, 20)
