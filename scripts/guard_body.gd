@@ -9,7 +9,7 @@ var on_route = false
 func _ready():
 	velocity.x = -SPEED
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var is_on_route = is_overlapping_route()
 	
 	if on_route and !is_on_route:
