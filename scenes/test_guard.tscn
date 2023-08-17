@@ -45,6 +45,3 @@ shape = SubResource("SegmentShape2D_l0axx")
 
 [node name="route2" type="CollisionShape2D" parent="routes"]
 shape = SubResource("SegmentShape2D_qjmar")
-
-[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/AnimatedSprite2D" method="_on_player_ate_chocolate" flags=18]
-[connection signal="door_opened" from="TileMap/end" to="TileMap/end/Area2D/AnimatedSprite2D" method="_on_end_door_opened" flags=18]

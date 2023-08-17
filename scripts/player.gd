@@ -6,8 +6,8 @@ var color: String = "light"
 signal ate_chocolate(c: String)
 
 
-@onready var body = $body
-@onready var tile_map = get_parent()
+@onready var body: CharacterBody2D = $body
+@onready var tile_map: TileMap = get_parent()
 
 func _ready():
 	add_to_group("player")
@@ -34,15 +34,11 @@ func eat_chocolate(c: Area2D):
 
 func check_if_hidden():
 	# TODO - Why is this position shift needed? xD
-	var player_pos = body.position + Vector2(8, 8) 
-	print (player_pos)
+	var player_pos = body.global_position
 	var tile_player_pos = tile_map.local_to_map(player_pos)
-	print(tile_player_pos)
 	var tile_data: TileData = tile_map.get_cell_tile_data(0, tile_player_pos)
-	print(tile_data)
 	if tile_data:
 		var data = tile_data.get_custom_data(Common.DataLayer_Shade)
-		print(data)
 		if data == "light" or data == "dark":
 			hiding = data == color
 		else:
