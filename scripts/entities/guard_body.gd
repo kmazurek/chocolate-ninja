@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal direction_changed(direction: int)
 
-const SPEED = 50.0
+const SPEED = 30.0
 
 var on_route = false
 
