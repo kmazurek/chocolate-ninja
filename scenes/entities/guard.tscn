@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://brbqutod0nlu0"]
+[gd_scene load_steps=6 format=3 uid="uid://brbqutod0nlu0"]
 
 [ext_resource type="Texture2D" uid="uid://csvx2xu8npdj" path="res://assets/placeholders/guard_placeholder.png" id="1_iyug2"]
 [ext_resource type="Script" path="res://scripts/entities/guard_body.gd" id="1_sotkj"]
@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2s6l"]
 size = Vector2(1, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd0t3"]
+size = Vector2(58, 2)
+
 [node name="guard" type="Node2D"]
 
 [node name="body" type="CharacterBody2D" parent="."]
@@ -28,7 +31,14 @@ script = ExtResource("1_sotkj")
 sprite_frames = SubResource("SpriteFrames_x1u6o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
-position = Vector2(-5.5, 0.5)
+position = Vector2(-6.5, 0.5)
 shape = SubResource("RectangleShape2D_s2s6l")
+
+[node name="sight" type="Area2D" parent="body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body/sight"]
+position = Vector2(-27, -5)
+shape = SubResource("RectangleShape2D_hd0t3")
+debug_color = Color(0.956863, 0.168627, 0.34902, 0.419608)
 
 [connection signal="direction_changed" from="body" to="body/AnimatedSprite2D" method="_on_body_direction_changed"]

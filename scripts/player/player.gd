@@ -2,6 +2,7 @@ extends Node2D
 
 var color: String = "light"
 @export var hiding: bool = true
+@export var seen: bool = false
 
 signal ate_chocolate(c: String)
 
@@ -16,11 +17,22 @@ func _process(_delta):
 	check_if_hidden()
 	check_if_eating()
 	
+	if hiding:
+		seen = false
+	else: 
+		check_if_seen()
+	
 func check_if_eating():
 	var chocolate = get_tree().get_nodes_in_group("chocolate")
 	for c in chocolate:
 		if c.overlaps_body(body):
 			eat_chocolate(c)
+			
+func check_if_seen():
+	var guards = get_tree().get_nodes_in_group("guards")
+	seen = false
+	for g in guards:
+		seen = seen || g.call("is_in_view", body)
 			
 func eat_chocolate(c: Area2D):
 	match c.get_parent().name:

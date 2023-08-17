@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://y04jbmj15ob4"]
 
-[ext_resource type="Script" path="res://scripts/ui/visibility_label.gd" id="1_xfur7"]
+[ext_resource type="Script" path="res://scripts/debug_ui.gd" id="1_xfur7"]
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -11,10 +11,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_xfur7")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="hiding" type="Label" parent="CanvasLayer"]
 offset_right = 63.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 20
 text = "visible"
-script = ExtResource("1_xfur7")
+
+[node name="seen" type="Label" parent="CanvasLayer"]
+offset_top = 23.0
+offset_right = 66.0
+offset_bottom = 49.0
+text = "not seen"

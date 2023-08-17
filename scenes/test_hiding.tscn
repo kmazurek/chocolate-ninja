@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm258kythnsod"]
+[gd_scene load_steps=3 format=3 uid="uid://bm258kythnsod"]
 
 [ext_resource type="TileSet" uid="uid://b154r2dke777u" path="res://assets/tiles/main_tile_set.tres" id="1_71oka"]
 [ext_resource type="PackedScene" uid="uid://y04jbmj15ob4" path="res://scenes/debug_ui.tscn" id="2_vmwsk"]
@@ -12,15 +12,18 @@ size = Vector2(90, 20)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_71oka")
 format = 2
+layer_0/name = "background"
 layer_0/tile_data = PackedInt32Array(327671, 393216, 4, 327672, 65536, 2, 327673, 65536, 2, 327674, 65536, 2, 327675, 65536, 2, 327676, 65536, 2, 327677, 65536, 2, 327678, 65536, 2, 327679, 65536, 2, 262144, 65536, 2, 262145, 65536, 2, 262146, 0, 5, 262147, 0, 3, 196609, 196608, 0, 196610, 131072, 4, 196611, 0, 3, 196608, 196608, 0, 262143, 196608, 0, 262142, 196608, 0, 262141, 196608, 0, 262140, 196608, 0, 262139, 196608, 0, 262138, 196608, 0, 262137, 196608, 0, 262136, 196608, 0, 262135, 65536, 4, 262134, 131072, 1, 327670, 131072, 1, 196612, 0, 3, 262148, 0, 3, 196613, 0, 3, 262149, 0, 3, 196615, 0, 3, 196614, 0, 3, 262150, 0, 3, 262151, 0, 3, 262152, 196608, 3, 196616, 393216, 1, 196617, 262144, 1, 262153, 262144, 1, 196601, 2, 1, 131065, 2, 1, 196602, 2, 1, 131066, 2, 1, 196603, 2, 1, 196604, 2, 1, 65529, 2, 1, -7, 2, 1, -65543, 2, 1, 131064, 2, 1, 196600, 2, 1, -2, 2, 1, 65534, 2, 1, 131070, 2, 1, 196606, 2, 1, 131074, 131074, 0, 131077, 131074, 0, 65541, 131074, 0, 5, 131074, 0, -65531, 131074, 0, 65526, 1, 65536, 65532, 1, 196608, 131072, 1, 327680, 65528, 2, 1)
+layer_1/name = "areas"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(196603, 1, 393216, 196604, 1, 393216, 196605, 1, 393216, 196606, 1, 393216, 196607, 1, 393216, 131072, 1, 393216, 131073, 1, 393216, 131074, 1, 393216, 131075, 1, 393216)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ui" parent="." instance=ExtResource("2_vmwsk")]
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_51uur")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-29, 39)
-shape = SubResource("RectangleShape2D_618ve")
+[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/AnimatedSprite2D" method="_on_player_ate_chocolate" flags=18]
