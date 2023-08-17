@@ -1,0 +1,21 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://vfnm7r5nnd7o"]
+
+[ext_resource type="AudioStream" uid="uid://cawkuch6q85ir" path="res://assets/audio/sfx/guard/guard-huh-01.wav" id="1_votex"]
+[ext_resource type="AudioStream" uid="uid://cm7d3aumfsiyu" path="res://assets/audio/sfx/guard/guard-huh-02.wav" id="2_3etmx"]
+[ext_resource type="AudioStream" uid="uid://b4v3p0qduoql1" path="res://assets/audio/sfx/guard/guard-huh-03.wav" id="3_hgerw"]
+[ext_resource type="AudioStream" uid="uid://ebbb1cn5wpv1" path="res://assets/audio/sfx/guard/guard-huh-04.wav" id="4_ju2q2"]
+[ext_resource type="AudioStream" uid="uid://dc8hbv4jb2ovw" path="res://assets/audio/sfx/guard/guard-huh-05.wav" id="5_hjj0p"]
+
+[resource]
+streams_count = 5
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("1_votex")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_3etmx")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_hgerw")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_ju2q2")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_hjj0p")
+stream_4/weight = 1.0

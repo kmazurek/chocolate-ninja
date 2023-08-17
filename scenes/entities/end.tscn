@@ -1,31 +1,101 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0u0da0fssfr4"]
+[gd_scene load_steps=9 format=3 uid="uid://d0u0da0fssfr4"]
 
 [ext_resource type="Script" path="res://scripts/end.gd" id="1_4j0vq"]
-[ext_resource type="Texture2D" uid="uid://dkwieuenpq51l" path="res://assets/placeholders/Door_closed.png" id="2_uhyh3"]
-[ext_resource type="Texture2D" uid="uid://dcjy2djw3o6xu" path="res://assets/placeholders/Door_open.png" id="3_ff2av"]
+[ext_resource type="SpriteFrames" uid="uid://dhsnsq0msswxh" path="res://assets/animations/door.res" id="2_v2f4g"]
 [ext_resource type="Script" path="res://scripts/end_animation.gd" id="4_c87lj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1ovxm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_uhyh3")
-}],
-"loop": true,
-"name": &"closed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ff2av")
-}],
-"loop": true,
-"name": &"open",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mq75j"]
 size = Vector2(14, 15)
+
+[sub_resource type="Animation" id="Animation_4cvfd"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["closed_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_4cj7s"]
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["open_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_2d6tm"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.68, 0.76, 0.86, 0.94),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["opening"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ah3mk"]
+_data = {
+"closed_idle": SubResource("Animation_4cvfd"),
+"open_idle": SubResource("Animation_4cj7s"),
+"opening": SubResource("Animation_2d6tm")
+}
 
 [node name="end" type="Node2D"]
 script = ExtResource("1_4j0vq")
@@ -33,13 +103,19 @@ script = ExtResource("1_4j0vq")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-sprite_frames = SubResource("SpriteFrames_1ovxm")
-animation = &"closed"
+sprite_frames = ExtResource("2_v2f4g")
+animation = &"opening"
 script = ExtResource("4_c87lj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_mq75j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_ah3mk")
+}
 
 [connection signal="door_opened" from="." to="Area2D/AnimatedSprite2D" method="_on_end_door_opened"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

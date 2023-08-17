@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmpguffcyry6o"]
 
 [ext_resource type="Script" path="res://scripts/chocolate.gd" id="1_40823"]
-[ext_resource type="Texture2D" uid="uid://wilcpn28hj56" path="res://assets/placeholders/chocolate_light_placeholder.png" id="2_fo5cr"]
+[ext_resource type="SpriteFrames" uid="uid://bua8hrkykk0cr" path="res://assets/animations/chocolate_light.res" id="2_027dm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1v05"]
 radius = 6.0
@@ -12,8 +12,11 @@ height = 14.0
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_40823")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("2_fo5cr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = ExtResource("2_027dm")
+animation = &"idle"
+autoplay = "idle"
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_k1v05")

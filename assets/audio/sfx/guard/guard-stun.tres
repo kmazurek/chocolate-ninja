@@ -1,0 +1,37 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=11 format=3 uid="uid://m86kus53nsd"]
+
+[ext_resource type="AudioStream" uid="uid://5ted5ax6hl6p" path="res://assets/audio/sfx/guard/guard-stun-01.wav" id="1_4t0q7"]
+[ext_resource type="AudioStream" uid="uid://b0vwf1lm3mvus" path="res://assets/audio/sfx/guard/guard-stun-02.wav" id="2_dnlpr"]
+[ext_resource type="AudioStream" uid="uid://c5junv1bv2ry7" path="res://assets/audio/sfx/guard/guard-stun-03.wav" id="3_7w8wc"]
+[ext_resource type="AudioStream" uid="uid://bh4q4udv3lgw2" path="res://assets/audio/sfx/guard/guard-stun-04.wav" id="4_xgmjl"]
+[ext_resource type="AudioStream" uid="uid://cooxuhckh73u" path="res://assets/audio/sfx/guard/guard-stun-05.wav" id="5_r3dop"]
+[ext_resource type="AudioStream" uid="uid://b5dtn2xoyyqeq" path="res://assets/audio/sfx/guard/guard-stun-06.wav" id="6_3hu7i"]
+[ext_resource type="AudioStream" uid="uid://3na60oyuiwbm" path="res://assets/audio/sfx/guard/guard-stun-07.wav" id="7_plf0y"]
+[ext_resource type="AudioStream" uid="uid://b3t5hs7fwabp4" path="res://assets/audio/sfx/guard/guard-stun-08.wav" id="8_ivla3"]
+[ext_resource type="AudioStream" uid="uid://fxhgrrj2qh48" path="res://assets/audio/sfx/guard/guard-stun-09.wav" id="9_px2cc"]
+[ext_resource type="AudioStream" uid="uid://k3p1nt66jryh" path="res://assets/audio/sfx/guard/guard-stun-10.wav" id="10_5v3sw"]
+
+[resource]
+streams_count = 10
+random_pitch = 1.05
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("1_4t0q7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_dnlpr")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_7w8wc")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_xgmjl")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_r3dop")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("6_3hu7i")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("7_plf0y")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("8_ivla3")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("9_px2cc")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("10_5v3sw")
+stream_9/weight = 1.0
