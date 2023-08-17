@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bxfyx7ni12ro8"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_8h0f1"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_8xdx3"]
+[ext_resource type="Script" path="res://scripts/player/player_body.gd" id="2_2ilof"]
 [ext_resource type="Texture2D" uid="uid://sqcici1m7lc4" path="res://assets/placeholders/ninja_dark_placeholder.png" id="2_dnecq"]
-[ext_resource type="Script" path="res://scripts/player_body.gd" id="2_v1kv1"]
 [ext_resource type="Texture2D" uid="uid://dkul7gdrjdkkk" path="res://assets/placeholders/ninja_light_placeholder.png" id="3_k6qlh"]
-[ext_resource type="Script" path="res://scripts/player_animation.gd" id="5_toyho"]
-[ext_resource type="Script" path="res://scripts/player_audio.gd" id="6_70or0"]
+[ext_resource type="Script" path="res://scripts/player/player_animation.gd" id="5_webwi"]
+[ext_resource type="Script" path="res://scripts/player/player_audio.gd" id="6_8t007"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rp1c"]
 animations = [{
@@ -30,23 +30,23 @@ animations = [{
 size = Vector2(14.4844, 13)
 
 [node name="player" type="Node2D"]
-script = ExtResource("1_8h0f1")
+script = ExtResource("1_8xdx3")
 
 [node name="body" type="CharacterBody2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-script = ExtResource("2_v1kv1")
+script = ExtResource("2_2ilof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body"]
 sprite_frames = SubResource("SpriteFrames_0rp1c")
 animation = &"light"
-script = ExtResource("5_toyho")
+script = ExtResource("5_webwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_dtaf0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("6_70or0")
+script = ExtResource("6_8t007")
 
 [connection signal="ate_chocolate" from="." to="body/AnimatedSprite2D" method="_on_player_ate_chocolate"]
 [connection signal="ate_chocolate" from="." to="AudioStreamPlayer" method="_on_player_ate_chocolate"]

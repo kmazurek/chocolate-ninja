@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://d0u0da0fssfr4"]
 
-[ext_resource type="Script" path="res://scripts/end.gd" id="1_4j0vq"]
+[ext_resource type="Script" path="res://scripts/entities/end.gd" id="1_4j0vq"]
 [ext_resource type="SpriteFrames" uid="uid://dhsnsq0msswxh" path="res://assets/animations/door.res" id="2_v2f4g"]
-[ext_resource type="Script" path="res://scripts/end_animation.gd" id="4_c87lj"]
+[ext_resource type="Script" path="res://scripts/entities/end_animation.gd" id="4_c87lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mq75j"]
 size = Vector2(14, 15)

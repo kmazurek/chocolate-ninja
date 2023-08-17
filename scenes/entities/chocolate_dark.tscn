@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdq1u214dml8o"]
 
-[ext_resource type="Script" path="res://scripts/chocolate.gd" id="1_bvfqf"]
+[ext_resource type="Script" path="res://scripts/entities/chocolate.gd" id="1_bvfqf"]
 [ext_resource type="SpriteFrames" uid="uid://snj2dmhbxuqg" path="res://assets/animations/chocolate_dark.res" id="2_83kt1"]
 
 [sub_resource type="GDScript" id="GDScript_ytc8d"]
