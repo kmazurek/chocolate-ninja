@@ -14,6 +14,7 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	apply_inputs()
 	move_and_slide()
+	update_collisions()
 
 func apply_inputs():
 	if Input.is_action_just_pressed("restart_level"):
@@ -24,6 +25,10 @@ func apply_inputs():
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
+		is_jumping = true
+		
+	if is_on_floor() and Input.is_action_just_pressed("move_down"):
+		velocity.y = -JUMP_VELOCITY
 		is_jumping = true
 		
 	if is_jumping and Input.is_action_just_released("jump"):
@@ -42,5 +47,10 @@ func apply_gravity(delta: float):
 	else:
 		velocity.y = 0
 
-
-
+func update_collisions():
+	if is_jumping:
+		set_collision_layer_value(2, false)
+		set_collision_mask_value(2, false)
+	else:
+		set_collision_layer_value(2, true)
+		set_collision_mask_value(2, true)
