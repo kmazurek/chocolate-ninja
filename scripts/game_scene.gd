@@ -16,8 +16,12 @@ var levels: Array = [
 	preload("res://scenes/levels/d_level5.tscn"),
 	preload("res://scenes/levels/d_level6_bridges.tscn"),
 	preload("res://scenes/levels/d_level7_B&W.tscn"),
-	preload("res://scenes/levels/d_level8_floor_is_lava.tscn")
+	preload("res://scenes/levels/d_level8_floor_is_lava.tscn"),
+	preload("res://scenes/levels/d_level9_drop.tscn"),
+	preload("res://scenes/levels/d_level10_final.tscn")
 ]
+
+var ending: PackedScene = preload("res://scenes/ending.tscn")
 
 var current_level_index = -1
 var current_level: Node
@@ -48,7 +52,8 @@ func _process(_delta):
 func _on_end_entered():
 	if done:
 		if current_level_index == len(levels) - 1:
-			print("all levels finished")
+			remove_child(current_level)
+			add_child(ending.instantiate())
 		else:
 			_advance_level()
 	
