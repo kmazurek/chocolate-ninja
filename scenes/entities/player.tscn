@@ -1,30 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxfyx7ni12ro8"]
+[gd_scene load_steps=10 format=3 uid="uid://bxfyx7ni12ro8"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_8xdx3"]
 [ext_resource type="Script" path="res://scripts/player/player_body.gd" id="2_2ilof"]
-[ext_resource type="Texture2D" uid="uid://sqcici1m7lc4" path="res://assets/placeholders/ninja_dark_placeholder.png" id="2_dnecq"]
-[ext_resource type="Texture2D" uid="uid://dkul7gdrjdkkk" path="res://assets/placeholders/ninja_light_placeholder.png" id="3_k6qlh"]
+[ext_resource type="SpriteFrames" uid="uid://mhw6o8w427ck" path="res://assets/animations/ninja_light.res" id="3_id1t7"]
 [ext_resource type="Script" path="res://scripts/player/player_animation.gd" id="5_webwi"]
+[ext_resource type="AnimationLibrary" uid="uid://bqr48uroq4wyd" path="res://assets/animations/ninja_light_library.res" id="6_1le58"]
 [ext_resource type="Script" path="res://scripts/player/player_audio.gd" id="6_8t007"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0rp1c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_dnecq")
-}],
-"loop": true,
-"name": &"dark",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_k6qlh")
-}],
-"loop": true,
-"name": &"light",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://vbn084f8trq2" path="res://assets/animations/ninja_dark.res" id="7_ok8pw"]
+[ext_resource type="AnimationLibrary" uid="uid://bka8h2byahn1n" path="res://assets/animations/ninja_dark_library.res" id="8_xdx3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtaf0"]
 size = Vector2(14.4844, 13)
@@ -36,16 +19,32 @@ script = ExtResource("1_8xdx3")
 position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("2_2ilof")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body"]
-sprite_frames = SubResource("SpriteFrames_0rp1c")
-animation = &"light"
-script = ExtResource("5_webwi")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_dtaf0")
 
+[node name="Animations" type="Node2D" parent="body"]
+script = ExtResource("5_webwi")
+
+[node name="AnimatedSpriteLight" type="AnimatedSprite2D" parent="body/Animations"]
+sprite_frames = ExtResource("3_id1t7")
+animation = &"run"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="body/Animations/AnimatedSpriteLight"]
+root_node = NodePath("../../../..")
+libraries = {
+"": ExtResource("6_1le58")
+}
+
+[node name="AnimatedSpriteDark" type="AnimatedSprite2D" parent="body/Animations"]
+position = Vector2(-2.08165e-12, -2.08165e-12)
+sprite_frames = ExtResource("7_ok8pw")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="body/Animations/AnimatedSpriteDark"]
+libraries = {
+"": ExtResource("8_xdx3q")
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("6_8t007")
-
-[connection signal="ate_chocolate" from="." to="body/AnimatedSprite2D" method="_on_player_ate_chocolate"]

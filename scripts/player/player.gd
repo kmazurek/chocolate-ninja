@@ -1,6 +1,6 @@
 extends Node2D
 
-var color: String = "light"
+var color: String = Common.ChocolateColor_Light
 @export var hiding: bool = true
 @export var seen: bool = false
 
@@ -36,10 +36,10 @@ func check_if_seen():
 			
 func eat_chocolate(c: Area2D):
 	match c.get_parent().name:
-		"chocolate_light": 
-				color = "light"
-		"chocolate_dark":
-				color = "dark"
+		Common.ChocolateEntityName_Light: 
+				color = Common.ChocolateColor_Light
+		Common.ChocolateEntityName_Dark:
+				color = Common.ChocolateColor_Dark
 	ate_chocolate.emit(color)
 	c.queue_free()
 

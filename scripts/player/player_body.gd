@@ -33,7 +33,8 @@ func apply_inputs():
 	velocity.x = direction * SPEED
 	
 	if direction != 0:
-		$AnimatedSprite2D.flip_h = direction != 1
+		$Animations/AnimatedSpriteLight.flip_h = direction != 1
+		$Animations/AnimatedSpriteDark.flip_h = direction != 1
 
 func apply_gravity(delta: float):
 	if not is_on_floor():
