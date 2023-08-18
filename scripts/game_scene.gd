@@ -46,7 +46,6 @@ func _process(_delta):
 		get_tree().call_group("end", "open")
 	
 func _on_end_entered():
-	print("_on_end_entered")
 	if done:
 		if current_level_index == len(levels) - 1:
 			print("all levels finished")

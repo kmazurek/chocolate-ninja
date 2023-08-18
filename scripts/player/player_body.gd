@@ -62,14 +62,14 @@ func apply_inputs():
 		
 	if is_on_floor():
 		if velocity.x != 0:
-			try_update_state(Common.PlayerState.RUNNING)
+			try_change_state(Common.PlayerState.RUNNING)
 		else:
-			try_update_state(Common.PlayerState.IDLE)
+			try_change_state(Common.PlayerState.IDLE)
 	else:
 		if velocity.y > 0:
-			try_update_state(Common.PlayerState.JUMPING)
+			try_change_state(Common.PlayerState.JUMPING)
 		else:
-			try_update_state(Common.PlayerState.FALLING)
+			try_change_state(Common.PlayerState.FALLING)
 
 func is_on_fallthrough():
 	var coordinates = tile_map.local_to_map(global_position)
@@ -100,7 +100,7 @@ func update_collisions():
 		set_collision_layer_value(2, true)
 		set_collision_mask_value(2, true)
 
-func try_update_state(new_state: Common.PlayerState):
+func try_change_state(new_state: Common.PlayerState):
 	if new_state != current_state:
 		player_state_updated.emit(current_state, new_state)
 		current_state = new_state

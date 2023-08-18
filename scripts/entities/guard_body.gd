@@ -6,11 +6,13 @@ const SPEED = 50.0
 const RANGE = 5
 const WAIT_UNTIL_TURN = 2
 
-var state = "patrolling"
 var wait: float = 0
 
 @onready var sight = $sight
 
+
+var current_state: Common.GuardState
+signal guard_state_updated(old_state: Common.GuardState, new_state: Common.GuardState)
 
 func _ready():
 	add_to_group("guards")
@@ -20,22 +22,22 @@ func _ready():
 func _physics_process(delta):
 	var is_on_route = is_overlapping_route()
 
-	match state:
-		"waiting": 
+	match current_state:
+		Common.GuardState.IDLE: 
 			wait += delta
 			if wait > WAIT_UNTIL_TURN:
-				state = "returning"
+				change_state(Common.GuardState.RETURNING)
 				scale.x = scale.x * -1
 				velocity.x = -velocity.x
-		"returning":
+		Common.GuardState.RETURNING:
 			if is_on_route:
-				state = "patrolling"
-		"patrolling":
+				change_state(Common.GuardState.WALKING)
+		Common.GuardState.WALKING:
 			if !is_on_route:
-				state = "waiting"
+				change_state(Common.GuardState.IDLE)
 				wait = 0
 
-	if state != "waiting":
+	if current_state != Common.GuardState.IDLE:
 		move_and_slide()
 
 
@@ -49,3 +51,8 @@ func is_overlapping_route():
 		if r.overlaps_body(self):
 			return true
 	return false
+
+func change_state(new_state: Common.GuardState):
+	if new_state != current_state:
+		guard_state_updated.emit(current_state, new_state)
+		current_state = new_state

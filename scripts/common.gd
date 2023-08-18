@@ -13,3 +13,7 @@ var ChocolateColor_Dark = "dark"
 enum PlayerState {
 	IDLE, RUNNING, JUMPING, FALLING
 }
+
+enum GuardState {
+	IDLE, WALKING, RETURNING, ALARMED
+}
