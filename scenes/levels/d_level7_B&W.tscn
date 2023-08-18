@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b154r2dke777u" path="res://assets/tiles/main_tile_set.tres" id="1_5aol8"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_osgvu"]
 
-[node name="scene_root" type="Node2D"]
+[node name="scene_root2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_5aol8")

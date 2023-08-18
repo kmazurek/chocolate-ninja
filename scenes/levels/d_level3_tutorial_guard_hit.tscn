@@ -43,3 +43,7 @@ theme_override_font_sizes/font_size = 10
 text = "stun guard
 press x"
 horizontal_alignment = 1
+
+[connection signal="ate_chocolate" from="TileMap2/player" to="TileMap2/player/body/Animations" method="_on_player_ate_chocolate" flags=18]
+[connection signal="got_seen" from="TileMap2/player" to="TileMap2/player/body" method="_on_player_got_seen" flags=18]
+[connection signal="got_seen" from="TileMap2/player" to="TileMap2/player/body/Animations" method="_on_player_got_seen" flags=18]
