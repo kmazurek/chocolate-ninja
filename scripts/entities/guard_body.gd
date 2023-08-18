@@ -11,7 +11,8 @@ var wait: float = 0
 @onready var sight = $sight
 
 
-var current_state: Common.GuardState
+var current_state: Common.GuardState = Common.GuardState.WALKING
+
 signal guard_state_updated(old_state: Common.GuardState, new_state: Common.GuardState)
 
 func _ready():
