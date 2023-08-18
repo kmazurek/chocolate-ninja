@@ -35,17 +35,11 @@ func check_if_seen():
 		seen = seen || g.call("is_in_view", body)
 			
 func eat_chocolate(c: Area2D):
-	match c.get_parent().name:
-		Common.ChocolateEntityName_Light: 
-				color = Common.ChocolateColor_Light
-		Common.ChocolateEntityName_Dark:
-				color = Common.ChocolateColor_Dark
-	ate_chocolate.emit(color)
+	ate_chocolate.emit(c.color)
 	c.queue_free()
 
 
 func check_if_hidden():
-	# TODO - Why is this position shift needed? xD
 	var player_pos = body.global_position
 	var tile_player_pos = tile_map.local_to_map(player_pos)
 	var tile_data: TileData = tile_map.get_cell_tile_data(0, tile_player_pos)

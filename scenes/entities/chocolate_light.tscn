@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmpguffcyry6o"]
 
-[ext_resource type="Script" path="res://scripts/entities/chocolate.gd" id="1_40823"]
+[ext_resource type="Script" path="res://scripts/entities/chocolate_light.gd" id="1_rk5qf"]
 [ext_resource type="SpriteFrames" uid="uid://bua8hrkykk0cr" path="res://assets/animations/chocolate_light.res" id="2_027dm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1v05"]
@@ -10,7 +10,7 @@ height = 14.0
 [node name="chocolate_light" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_40823")
+script = ExtResource("1_rk5qf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = ExtResource("2_027dm")
