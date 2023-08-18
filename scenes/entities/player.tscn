@@ -41,7 +41,7 @@ libraries = {
 [node name="AnimatedSpriteDark" type="AnimatedSprite2D" parent="body/Animations"]
 position = Vector2(-2.08165e-12, -2.08165e-12)
 sprite_frames = ExtResource("7_ok8pw")
-animation = &"idle"
+animation = &"busted"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="body/Animations/AnimatedSpriteDark"]
 libraries = {
@@ -49,6 +49,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 script = ExtResource("6_8t007")
 
 [connection signal="ate_chocolate" from="." to="body/Animations" method="_on_player_ate_chocolate"]
