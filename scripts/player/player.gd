@@ -6,6 +6,7 @@ var color: String = Common.ChocolateColor_Light
 
 signal ate_chocolate(c: String)
 signal got_seen(position: Vector2)
+signal please_restart()
 
 
 @onready var body: CharacterBody2D = $body
@@ -16,6 +17,9 @@ func _ready():
 
 func _process(_delta):
 	if not seen: 
+		if Input.is_action_just_pressed("restart_level"):
+			please_restart.emit()
+		
 		check_if_hidden()
 		check_if_eating()
 		if not hiding:

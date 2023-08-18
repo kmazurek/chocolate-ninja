@@ -1,7 +1,5 @@
 extends Node2D
 
-
-	
 @export var next_level: String
 
 var end: Node2D
@@ -26,21 +24,24 @@ var ending: PackedScene = preload("res://scenes/ending.tscn")
 var current_level_index = -1
 var current_level: Node
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_advance_level()
-	
+
+
 func _advance_level():
 	current_level_index = current_level_index + 1
 	var next = levels[current_level_index].instantiate()
-	
+
 	if current_level != null:
 		remove_child(current_level)
 	current_level = next
 	add_child(current_level)
-	
+
 	var tileMap = current_level.get_node("TileMap")
 	tileMap.connect("child_entered_tree", _on_tile_map_child_added)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -48,7 +49,8 @@ func _process(_delta):
 	if chocolate.size() == 0 and not done:
 		done = true
 		get_tree().call_group("end", "open")
-	
+
+
 func _on_end_entered():
 	if done:
 		if current_level_index == len(levels) - 1:
@@ -56,24 +58,34 @@ func _on_end_entered():
 			add_child(ending.instantiate())
 		else:
 			_advance_level()
-	
+
+
 func _on_tile_map_child_added(node: Node):
 	if node.name == "end":
 		node.connect("end_entered", _on_end_entered)
 		done = false
-	
+
 	if node.name == "player":
 		node.connect("got_seen", _on_got_seen)
-		
-func _on_got_seen(position: Vector2):
+		node.connect("please_restart", restart_level)
+
+
+func _on_got_seen(p: Vector2):
 	var camera: Camera2D = get_tree().get_first_node_in_group("camera")
-	camera.position = position
-	camera.zoom = Vector2(2,2)
+	camera.position = p
+	camera.zoom = Vector2(2, 2)
 	await get_tree().create_timer(1.0).timeout
-	camera.zoom = Vector2(4,4)
+	camera.zoom = Vector2(4, 4)
 	await get_tree().create_timer(1.0).timeout
 	camera.zoom = Vector2(8, 8)
 	await get_tree().create_timer(1.0).timeout
-	get_tree().reload_current_scene()
-	
-	
+	restart_level()
+
+
+func restart_level():
+	current_level.queue_free()
+	var restarted = levels[current_level_index].instantiate()
+	current_level = restarted
+	add_child(current_level)
+	var tileMap = current_level.get_node("TileMap")
+	tileMap.connect("child_entered_tree", _on_tile_map_child_added)

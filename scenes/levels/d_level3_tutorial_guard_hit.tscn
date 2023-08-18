@@ -6,7 +6,7 @@
 
 [node name="scene_root" type="Node2D"]
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_hqrwe")
 format = 2
 layer_0/name = "background"
@@ -44,6 +44,6 @@ text = "stun guard
 press x"
 horizontal_alignment = 1
 
-[connection signal="ate_chocolate" from="TileMap2/player" to="TileMap2/player/body/Animations" method="_on_player_ate_chocolate" flags=18]
-[connection signal="got_seen" from="TileMap2/player" to="TileMap2/player/body" method="_on_player_got_seen" flags=18]
-[connection signal="got_seen" from="TileMap2/player" to="TileMap2/player/body/Animations" method="_on_player_got_seen" flags=18]
+[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_ate_chocolate" flags=18]
+[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body" method="_on_player_got_seen" flags=18]
+[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_got_seen" flags=18]

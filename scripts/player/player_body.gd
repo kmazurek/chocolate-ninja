@@ -25,9 +25,6 @@ func _physics_process(delta):
 
 
 func apply_inputs():
-	if Input.is_action_just_pressed("restart_level"):
-		get_tree().reload_current_scene()
-
 	var is_fallthrough = not get_collision_layer_value(3)
 
 	if is_on_floor():
