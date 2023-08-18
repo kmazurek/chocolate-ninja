@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dithlpiiqvbqk"]
+[gd_scene load_steps=8 format=3 uid="uid://dithlpiiqvbqk"]
 
 [ext_resource type="FontFile" uid="uid://c1y1goxw5las4" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_dpewo"]
 [ext_resource type="FontFile" uid="uid://14evxjlcwkfu" path="res://assets/fonts/monciaki-sans-bold.ttf" id="3_2xi88"]
 [ext_resource type="Script" path="res://scripts/ui/main_menu_start.gd" id="3_h1oi5"]
 [ext_resource type="Script" path="res://scripts/ui/main_menu_exit.gd" id="4_ijd13"]
 [ext_resource type="SpriteFrames" uid="uid://crg61n02g5qd7" path="res://assets/animations/title_screen/title_animation.res" id="5_tjv47"]
+[ext_resource type="AudioStream" uid="uid://dmieykyfrg4ab" path="res://assets/audio/music/choco-ninja-intro.ogg" id="6_2ectm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_74mk5"]
 font = ExtResource("3_2xi88")
@@ -97,3 +98,8 @@ metadata/_aseprite_wizard_config_ = {
 "op_exp": true,
 "source": ""
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2ectm")
+autoplay = true
+bus = &"Intro"
