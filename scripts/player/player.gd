@@ -5,6 +5,7 @@ var color: String = Common.ChocolateColor_Light
 @export var seen: bool = false
 
 signal ate_chocolate(c: String)
+signal got_seen(position: Vector2)
 
 
 @onready var body: CharacterBody2D = $body
@@ -14,13 +15,13 @@ func _ready():
 	add_to_group("player")
 
 func _process(_delta):
-	check_if_hidden()
-	check_if_eating()
-	
-	if hiding:
-		seen = false
-	else: 
-		check_if_seen()
+	if not seen: 
+		check_if_hidden()
+		check_if_eating()
+		if not hiding:
+			check_if_seen()
+		if seen:
+			got_seen.emit(body.global_position)
 	
 func check_if_eating():
 	var chocolate = get_tree().get_nodes_in_group("chocolate")
@@ -30,11 +31,12 @@ func check_if_eating():
 			
 func check_if_seen():
 	var guards = get_tree().get_nodes_in_group("guards")
-	seen = false
 	for g in guards:
 		seen = seen || g.call("is_in_view", body)
-			
+
+		
 func eat_chocolate(c: Area2D):
+	color = c.color
 	ate_chocolate.emit(c.color)
 	c.queue_free()
 

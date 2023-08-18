@@ -40,3 +40,7 @@ func _on_body_player_state_updated(old_state: Common.PlayerState, new_state: Com
 		Common.PlayerState.JUMPING:
 			animation_name = "jump_fly"
 	active_anim_player.play(animation_name)
+
+
+func _on_player_got_seen(_position):
+	active_anim_player.play("busted_loop")

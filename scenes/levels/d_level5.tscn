@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccd8ap4aby3ti"]
+[gd_scene load_steps=3 format=3 uid="uid://ccd8ap4aby3ti"]
 
 [ext_resource type="TileSet" uid="uid://b154r2dke777u" path="res://assets/tiles/main_tile_set.tres" id="1_8jut3"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_ld1xf"]
 
 [node name="scene_root" type="Node2D"]
 
@@ -27,3 +28,4 @@ layer_2/tile_data = PackedInt32Array(327670, 131072, 0, 327671, 196608, 0, 32767
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2.08165e-12, -6)
+script = ExtResource("2_ld1xf")

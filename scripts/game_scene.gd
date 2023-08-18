@@ -28,11 +28,11 @@ func _ready():
 	
 func _advance_level():
 	current_level_index = current_level_index + 1
-	var next_level = levels[current_level_index].instantiate()
+	var next = levels[current_level_index].instantiate()
 	
 	if current_level != null:
 		remove_child(current_level)
-	current_level = next_level
+	current_level = next
 	add_child(current_level)
 	
 	var tileMap = current_level.get_node("TileMap")
@@ -56,4 +56,19 @@ func _on_tile_map_child_added(node: Node):
 	if node.name == "end":
 		node.connect("end_entered", _on_end_entered)
 		done = false
+	
+	if node.name == "player":
+		node.connect("got_seen", _on_got_seen)
+		
+func _on_got_seen(position: Vector2):
+	var camera: Camera2D = get_tree().get_first_node_in_group("camera")
+	camera.position = position
+	camera.zoom = Vector2(2,2)
+	await get_tree().create_timer(1.0).timeout
+	camera.zoom = Vector2(4,4)
+	await get_tree().create_timer(1.0).timeout
+	camera.zoom = Vector2(8, 8)
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()
+	
 	

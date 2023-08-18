@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://10erj7w7f4hb"]
+[gd_scene load_steps=3 format=3 uid="uid://10erj7w7f4hb"]
 
 [ext_resource type="TileSet" uid="uid://b154r2dke777u" path="res://assets/tiles/main_tile_set.tres" id="1_5aol8"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_osgvu"]
 
 [node name="scene_root" type="Node2D"]
 
@@ -27,5 +28,4 @@ layer_2/tile_data = PackedInt32Array(-196613, 131072, 1, -196610, 0, 3, -196611,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2.08165e-12, -6)
-
-[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/AnimatedSprite2D" method="_on_player_ate_chocolate" flags=18]
+script = ExtResource("2_osgvu")
