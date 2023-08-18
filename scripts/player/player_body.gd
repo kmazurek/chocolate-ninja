@@ -19,7 +19,6 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	apply_inputs()
 	move_and_slide()
-	update_collisions()
 
 func apply_inputs():
 	if Input.is_action_just_pressed("restart_level"):
@@ -29,13 +28,12 @@ func apply_inputs():
 
 	if is_on_floor():
 		is_jumping = false
-		set_collision_layer_value(3, true)
+		set_fallthrough(true)
 		
 	if is_on_floor() and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_DOWN_VELOCITY
 		is_jumping = true
-		set_collision_layer_value(3, false)
-		set_collision_mask_value(3, false)
+		set_fallthrough(false)
 	elif is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
@@ -43,7 +41,7 @@ func apply_inputs():
 	if is_on_fallthrough() and is_fallthrough:
 		is_falling_through = true
 	elif not is_on_fallthrough() and is_falling_through:
-		set_collision_layer_value(3, true)
+		set_fallthrough(true)
 		is_falling_through = false
 		
 		
@@ -92,13 +90,6 @@ func apply_gravity(delta: float):
 	else:
 		velocity.y = 0
 
-func update_collisions():
-	if is_jumping:
-		set_collision_layer_value(2, false)
-		set_collision_mask_value(2, false)
-	else:
-		set_collision_layer_value(2, true)
-		set_collision_mask_value(2, true)
 
 func try_change_state(new_state: Common.PlayerState):
 	if new_state != current_state:
