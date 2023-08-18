@@ -27,5 +27,3 @@ layer_2/tile_data = PackedInt32Array(-327690, 65536, 0, -262154, 327680, 0, -196
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2.08165e-12, -6)
-
-[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/AnimatedSprite2D" method="_on_player_ate_chocolate" flags=18]
