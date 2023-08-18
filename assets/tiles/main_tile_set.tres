@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://b154r2dke777u"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://b154r2dke777u"]
 
 [ext_resource type="Texture2D" uid="uid://ce7ffhmjjk7qr" path="res://assets/tiles/ground_tiles.png" id="1_s7ax2"]
 [ext_resource type="PackedScene" uid="uid://bxfyx7ni12ro8" path="res://scenes/entities/player.tscn" id="2_q44et"]
@@ -12,7 +12,10 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ftva"]
 
+[sub_resource type="GDScript" id="GDScript_a31io"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vpv2n"]
+script = SubResource("GDScript_a31io")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u30b3"]
 resource_name = "platforms"
@@ -411,7 +414,9 @@ texture = ExtResource("1_s7ax2")
 3:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 3:4/0/physics_layer_1/angular_velocity = 0.0
 3:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0/physics_layer_1/polygon_0/one_way = true
 3:4/0/terrains_peering_bit/right_side = 0
+3:4/0/custom_data_0 = "fallthrough"
 4:4/0 = 0
 4:4/0/terrain_set = 1
 4:4/0/terrain = 0
@@ -420,8 +425,10 @@ texture = ExtResource("1_s7ax2")
 4:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_1/angular_velocity = 0.0
 4:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0/physics_layer_1/polygon_0/one_way = true
 4:4/0/terrains_peering_bit/right_side = 0
 4:4/0/terrains_peering_bit/left_side = 0
+4:4/0/custom_data_0 = "fallthrough"
 5:4/0 = 0
 5:4/0/terrain_set = 1
 5:4/0/terrain = 0
@@ -430,7 +437,9 @@ texture = ExtResource("1_s7ax2")
 5:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 5:4/0/physics_layer_1/angular_velocity = 0.0
 5:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0/physics_layer_1/polygon_0/one_way = true
 5:4/0/terrains_peering_bit/left_side = 0
+5:4/0/custom_data_0 = "fallthrough"
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2evu1"]
 resource_name = "entities"
@@ -528,8 +537,8 @@ texture = ExtResource("3_fe4wi")
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_3ftva")
-physics_layer_1/collision_layer = 2
-physics_layer_1/collision_mask = 2
+physics_layer_1/collision_layer = 4
+physics_layer_1/collision_mask = 4
 physics_layer_1/physics_material = SubResource("PhysicsMaterial_vpv2n")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "platforms"
