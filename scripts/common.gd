@@ -9,3 +9,7 @@ var ChocolateEntityName_Dark = "chocolate_dark"
 
 var ChocolateColor_Light = "light"
 var ChocolateColor_Dark = "dark"
+
+enum PlayerState {
+	IDLE, RUNNING, JUMPING, FALLING
+}
