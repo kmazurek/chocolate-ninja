@@ -4,8 +4,11 @@ signal direction_changed(direction: int)
 
 const SPEED = 50.0
 const RANGE = 5
+const WAIT_UNTIL_TURN = 2
 
-var on_route = false
+var state = "patrolling"
+var wait: float = 0
+
 @onready var sight = $sight
 
 
@@ -14,17 +17,26 @@ func _ready():
 	velocity.x = -SPEED
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	var is_on_route = is_overlapping_route()
 
-	if on_route and !is_on_route:
-		on_route = false
-		velocity.x = -velocity.x
-		scale.x = scale.x * -1
-	elif !on_route and is_on_route:
-		on_route = true
+	match state:
+		"waiting": 
+			wait += delta
+			if wait > WAIT_UNTIL_TURN:
+				state = "returning"
+				scale.x = scale.x * -1
+				velocity.x = -velocity.x
+		"returning":
+			if is_on_route:
+				state = "patrolling"
+		"patrolling":
+			if !is_on_route:
+				state = "waiting"
+				wait = 0
 
-	move_and_slide()
+	if state != "waiting":
+		move_and_slide()
 
 
 func is_in_view(body: CharacterBody2D) -> bool:
