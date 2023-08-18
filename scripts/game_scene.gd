@@ -9,7 +9,14 @@ var done: bool = false
 
 var levels: Array = [
 	preload("res://scenes/levels/d_level0_tutorial_eat_chocolate.tscn"),
-	preload("res://scenes/levels/d_level1_tutorial_jumps.tscn")
+	preload("res://scenes/levels/d_level1_tutorial_jumps.tscn"),
+	preload("res://scenes/levels/d_level2_tutorial_guard.tscn"),
+	preload("res://scenes/levels/d_level3_tutorial_guard_hit.tscn"),
+	preload("res://scenes/levels/d_level4.tscn"),
+	preload("res://scenes/levels/d_level5.tscn"),
+	preload("res://scenes/levels/d_level6_bridges.tscn"),
+	preload("res://scenes/levels/d_level7_B&W.tscn"),
+	preload("res://scenes/levels/d_level8_floor_is_lava.tscn")
 ]
 
 var current_level_index = -1
