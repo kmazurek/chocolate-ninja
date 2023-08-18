@@ -117,7 +117,7 @@ script = ExtResource("1_4j0vq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = ExtResource("2_v2f4g")
-animation = &"open_idle"
+animation = &"closed_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
