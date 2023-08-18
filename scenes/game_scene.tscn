@@ -9,3 +9,4 @@ script = ExtResource("1_w0ucw")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7en8o")
 autoplay = true
+bus = &"Main loop"
