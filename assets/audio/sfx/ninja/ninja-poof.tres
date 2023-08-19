@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=3 format=3 uid="uid://bcdfgk8b8pf6w"]
+
+[ext_resource type="AudioStream" uid="uid://e5rdbyggts7s" path="res://assets/audio/sfx/ninja/ninja-poof-01.wav" id="1_pjau6"]
+[ext_resource type="AudioStream" uid="uid://cshia04a7u2hw" path="res://assets/audio/sfx/ninja/ninja-poof-02.wav" id="2_gqdqu"]
+
+[resource]
+streams_count = 2
+random_pitch = 1.05
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("1_pjau6")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_gqdqu")
+stream_1/weight = 1.0

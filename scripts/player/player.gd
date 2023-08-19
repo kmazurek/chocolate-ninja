@@ -8,7 +8,6 @@ signal ate_chocolate(c: String)
 signal got_seen(position: Vector2)
 signal please_restart()
 
-
 @onready var body: CharacterBody2D = $body
 @onready var tile_map: TileMap = get_parent()
 
