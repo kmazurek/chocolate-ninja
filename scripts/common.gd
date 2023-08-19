@@ -15,5 +15,5 @@ enum PlayerState {
 }
 
 enum GuardState {
-	IDLE, WALKING, RETURNING, ALARMED
+	IDLE, WALKING, RETURNING, ALARMED, STUNNED
 }

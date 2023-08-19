@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dithlpiiqvbqk"]
+[gd_scene load_steps=10 format=3 uid="uid://dithlpiiqvbqk"]
 
 [ext_resource type="FontFile" uid="uid://c1y1goxw5las4" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_dpewo"]
 [ext_resource type="FontFile" uid="uid://14evxjlcwkfu" path="res://assets/fonts/monciaki-sans-bold.ttf" id="3_2xi88"]
@@ -12,7 +12,15 @@ font_size = 20
 
 [sub_resource type="Theme" id="Theme_o14lo"]
 
-[node name="main_menu" type="Node2D"]
+[sub_resource type="InputEventKey" id="InputEventKey_sfdio"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_2ffg8"]
+events = [SubResource("InputEventKey_sfdio")]
+
+[node name="main_menu2" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -66,6 +74,7 @@ theme_override_colors/font_disabled_color = Color(0.976471, 0.831373, 0.611765, 
 theme_override_colors/font_outline_color = Color(0.976471, 0.831373, 0.611765, 1)
 theme_override_fonts/font = ExtResource("2_dpewo")
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_2ffg8")
 text = "Start game"
 script = ExtResource("3_h1oi5")
 

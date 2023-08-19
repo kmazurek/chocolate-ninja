@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
 signal direction_changed(direction: int)
+signal got_stunned()
+signal recovered_from_stunned()
 
 const SPEED = 50.0
 const RANGE = 5
 const WAIT_UNTIL_TURN = 2
+const STUNNED_TIME = 2
 
 var wait: float = 0
 
@@ -12,6 +15,7 @@ var wait: float = 0
 
 
 var current_state: Common.GuardState = Common.GuardState.WALKING
+var previous_state: Common.GuardState = current_state
 
 signal guard_state_updated(old_state: Common.GuardState, new_state: Common.GuardState)
 
@@ -20,10 +24,21 @@ func _ready():
 	velocity.x = -SPEED
 
 
+func stun():
+	wait = 0
+	previous_state = current_state
+	current_state = Common.GuardState.STUNNED
+	got_stunned.emit()
+
 func _physics_process(delta):
 	var is_on_route = is_overlapping_route()
 
 	match current_state:
+		Common.GuardState.STUNNED:
+			wait += delta
+			if wait > STUNNED_TIME:
+				recovered_from_stunned.emit()
+				current_state = previous_state
 		Common.GuardState.IDLE: 
 			wait += delta
 			if wait > WAIT_UNTIL_TURN:
@@ -38,7 +53,7 @@ func _physics_process(delta):
 				change_state(Common.GuardState.IDLE)
 				wait = 0
 
-	if current_state != Common.GuardState.IDLE:
+	if current_state != Common.GuardState.IDLE and current_state != Common.GuardState.STUNNED:
 		move_and_slide()
 
 
