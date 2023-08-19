@@ -23,7 +23,6 @@ func _ready():
 	add_to_group("guards")
 	velocity.x = -SPEED
 
-
 func stun():
 	wait = 0
 	previous_state = current_state

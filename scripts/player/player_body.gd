@@ -67,10 +67,8 @@ func apply_inputs():
 		else:
 			try_change_state(Common.PlayerState.IDLE)
 	else:
-		if velocity.y > 0:
+		if velocity.y != 0:
 			try_change_state(Common.PlayerState.JUMPING)
-		else:
-			try_change_state(Common.PlayerState.FALLING)
 
 
 func is_on_fallthrough():
