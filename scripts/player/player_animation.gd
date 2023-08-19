@@ -8,7 +8,7 @@ extends Node2D
 @onready var active_anim_player: AnimationPlayer
 
 func _ready():
-	switch_color(Common.ChocolateColor_Light)
+	switch_color(Common.ChocolateColor_Dark)
 
 func switch_color(color: String):
 	match color:
