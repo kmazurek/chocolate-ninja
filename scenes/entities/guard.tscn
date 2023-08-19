@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://brbqutod0nlu0"]
+[gd_scene load_steps=17 format=3 uid="uid://brbqutod0nlu0"]
 
 [ext_resource type="Script" path="res://scripts/entities/guard_body.gd" id="1_sotkj"]
 [ext_resource type="SpriteFrames" uid="uid://cvnk0do1hk36" path="res://assets/animations/guard.res" id="2_xvsvd"]
-[ext_resource type="Texture2D" uid="uid://bdrq0f3tjdhy4" path="res://assets/animations/guard_visionray.png" id="3_044l2"]
 [ext_resource type="Script" path="res://scripts/entities/guard_animation.gd" id="3_fpi3y"]
+[ext_resource type="SpriteFrames" uid="uid://srkcn6o1bmqm" path="res://assets/animations/guard_visionray.res" id="4_ehr4y"]
 [ext_resource type="Script" path="res://scripts/entities/guard_audio.gd" id="5_4anhd"]
 
 [sub_resource type="Animation" id="Animation_ef7qh"]
@@ -261,70 +261,6 @@ size = Vector2(1, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd0t3"]
 size = Vector2(58, 2)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5x6mk"]
-atlas = ExtResource("3_044l2")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_46ff0"]
-atlas = ExtResource("3_044l2")
-region = Rect2(8, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_der1o"]
-atlas = ExtResource("3_044l2")
-region = Rect2(16, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7t5sl"]
-atlas = ExtResource("3_044l2")
-region = Rect2(24, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7y1q"]
-atlas = ExtResource("3_044l2")
-region = Rect2(0, 16, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yj5xr"]
-atlas = ExtResource("3_044l2")
-region = Rect2(8, 16, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgkto"]
-atlas = ExtResource("3_044l2")
-region = Rect2(16, 16, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5xe0"]
-atlas = ExtResource("3_044l2")
-region = Rect2(24, 16, 8, 8)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_he4as"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5x6mk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_46ff0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_der1o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7t5sl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f7y1q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yj5xr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rgkto")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5xe0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
 [node name="guard" type="Node2D"]
 
 [node name="body" type="CharacterBody2D" parent="."]
@@ -334,7 +270,7 @@ script = ExtResource("1_sotkj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="body"]
 sprite_frames = ExtResource("2_xvsvd")
-animation = &"alarmed_loop"
+animation = &"idle"
 script = ExtResource("3_fpi3y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="body/AnimatedSprite2D"]
@@ -354,47 +290,23 @@ position = Vector2(-27, -5)
 shape = SubResource("RectangleShape2D_hd0t3")
 debug_color = Color(0.956863, 0.168627, 0.34902, 0.419608)
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="body/sight"]
+[node name="VisionRay1" type="AnimatedSprite2D" parent="body/sight"]
 texture_repeat = 2
-position = Vector2(-20, -2)
-sprite_frames = SubResource("SpriteFrames_he4as")
+position = Vector2(-16, -1)
+sprite_frames = ExtResource("4_ehr4y")
 autoplay = "default"
-frame_progress = 0.0253204
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="body/sight/AnimatedSprite2D5"]
+[node name="VisionRay2" type="AnimatedSprite2D" parent="body/sight"]
 texture_repeat = 2
-position = Vector2(-16, 0)
-sprite_frames = SubResource("SpriteFrames_he4as")
+position = Vector2(-32, -1)
+sprite_frames = ExtResource("4_ehr4y")
 autoplay = "default"
-frame_progress = 0.0253204
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="body/sight"]
+[node name="VisionRay3" type="AnimatedSprite2D" parent="body/sight"]
 texture_repeat = 2
-position = Vector2(-28, -2)
-sprite_frames = SubResource("SpriteFrames_he4as")
+position = Vector2(-48, -1)
+sprite_frames = ExtResource("4_ehr4y")
 autoplay = "default"
-frame_progress = 0.0253204
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="body/sight"]
-texture_repeat = 2
-position = Vector2(-52, -2)
-sprite_frames = SubResource("SpriteFrames_he4as")
-autoplay = "default"
-frame_progress = 0.0253204
-
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="body/sight"]
-texture_repeat = 2
-position = Vector2(-12, -2)
-sprite_frames = SubResource("SpriteFrames_he4as")
-autoplay = "default"
-frame_progress = 0.0253204
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="body/sight"]
-texture_repeat = 2
-position = Vector2(-44, -2)
-sprite_frames = SubResource("SpriteFrames_he4as")
-autoplay = "default"
-frame_progress = 0.0253204
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="body"]
 bus = &"SFX"
