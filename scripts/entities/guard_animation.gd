@@ -14,4 +14,6 @@ func _on_guard_state_updated(old_state: Common.GuardState, new_state: Common.Gua
 			animation_name = "idle"
 		Common.GuardState.WALKING:
 			animation_name = "walk"
+		Common.GuardState.ALARMED:
+			animation_name = "alarmed_start"
 	anim_player.play(animation_name)

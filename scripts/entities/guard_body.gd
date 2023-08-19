@@ -52,6 +52,8 @@ func _physics_process(delta):
 			if !is_on_route:
 				change_state(Common.GuardState.IDLE)
 				wait = 0
+		Common.GuardState.ALARMED:
+			return
 
 	if current_state != Common.GuardState.IDLE and current_state != Common.GuardState.STUNNED:
 		move_and_slide()
@@ -59,7 +61,9 @@ func _physics_process(delta):
 
 func is_in_view(body: CharacterBody2D) -> bool:
 	return sight.overlaps_body(body)
-
+	
+func alarm():
+	change_state(Common.GuardState.ALARMED)
 
 func is_overlapping_route():
 	var routes = get_tree().get_nodes_in_group("guard_routes")

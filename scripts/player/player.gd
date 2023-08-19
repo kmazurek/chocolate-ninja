@@ -37,6 +37,8 @@ func check_if_seen():
 	var guards = get_tree().get_nodes_in_group("guards")
 	for g in guards:
 		seen = seen || g.call("is_in_view", body)
+		if seen:
+			g.call("alarm")
 
 		
 func eat_chocolate(c: Area2D):
