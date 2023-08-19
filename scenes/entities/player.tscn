@@ -41,7 +41,7 @@ libraries = {
 [node name="AnimatedSpriteDark" type="AnimatedSprite2D" parent="body/Animations"]
 position = Vector2(-2.08165e-12, -2.08165e-12)
 sprite_frames = ExtResource("7_ok8pw")
-animation = &"end_level"
+animation = &"idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="body/Animations/AnimatedSpriteDark"]
 libraries = {
