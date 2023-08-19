@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dithlpiiqvbqk"]
+[gd_scene load_steps=8 format=3 uid="uid://dithlpiiqvbqk"]
 
 [ext_resource type="FontFile" uid="uid://c1y1goxw5las4" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_dpewo"]
 [ext_resource type="FontFile" uid="uid://14evxjlcwkfu" path="res://assets/fonts/monciaki-sans-bold.ttf" id="3_2xi88"]
@@ -9,6 +9,8 @@
 [sub_resource type="LabelSettings" id="LabelSettings_74mk5"]
 font = ExtResource("3_2xi88")
 font_size = 20
+
+[sub_resource type="Theme" id="Theme_o14lo"]
 
 [node name="main_menu" type="Node2D"]
 
@@ -43,7 +45,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="button_start" type="MenuButton" parent="CanvasLayer/menu"]
-modulate = Color(0.976471, 0.831373, 0.611765, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,6 +57,13 @@ offset_right = 150.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_o14lo")
+theme_override_colors/font_color = Color(0.976471, 0.831373, 0.611765, 1)
+theme_override_colors/font_pressed_color = Color(0.976471, 0.831373, 0.611765, 1)
+theme_override_colors/font_hover_color = Color(0.976471, 0.831373, 0.611765, 1)
+theme_override_colors/font_focus_color = Color(0.976471, 0.831373, 0.611765, 1)
+theme_override_colors/font_disabled_color = Color(0.976471, 0.831373, 0.611765, 1)
+theme_override_colors/font_outline_color = Color(0.976471, 0.831373, 0.611765, 1)
 theme_override_fonts/font = ExtResource("2_dpewo")
 theme_override_font_sizes/font_size = 10
 text = "Start game"
