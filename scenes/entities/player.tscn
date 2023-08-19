@@ -30,7 +30,7 @@ script = ExtResource("5_webwi")
 
 [node name="AnimatedSpriteLight" type="AnimatedSprite2D" parent="body/Animations"]
 sprite_frames = ExtResource("3_id1t7")
-animation = &"busted"
+animation = &"end_level"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="body/Animations/AnimatedSpriteLight"]
 root_node = NodePath("../../../..")
@@ -41,7 +41,7 @@ libraries = {
 [node name="AnimatedSpriteDark" type="AnimatedSprite2D" parent="body/Animations"]
 position = Vector2(-2.08165e-12, -2.08165e-12)
 sprite_frames = ExtResource("7_ok8pw")
-animation = &"busted"
+animation = &"end_level"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="body/Animations/AnimatedSpriteDark"]
 libraries = {
