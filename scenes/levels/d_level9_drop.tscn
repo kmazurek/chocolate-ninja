@@ -28,4 +28,5 @@ layer_2/tile_data = PackedInt32Array(-262155, 327680, 0, -327691, 327680, 0, -19
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2.08165e-12, -6)
+ignore_rotation = false
 script = ExtResource("2_exdxd")

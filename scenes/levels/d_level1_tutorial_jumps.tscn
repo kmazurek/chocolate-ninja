@@ -29,6 +29,7 @@ layer_2/tile_data = PackedInt32Array(393225, 262144, 2, 393224, 65536, 2, 393223
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, 10)
+ignore_rotation = false
 script = ExtResource("2_8yeqs")
 
 [node name="Label2" type="Label" parent="."]

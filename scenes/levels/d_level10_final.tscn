@@ -29,3 +29,7 @@ layer_2/tile_data = PackedInt32Array(-131073, 393216, 0, -196608, 65536, 1, -196
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2.08165e-12, -6)
 script = ExtResource("2_kdgdc")
+
+[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_ate_chocolate" flags=18]
+[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body" method="_on_player_got_seen" flags=18]
+[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_got_seen" flags=18]

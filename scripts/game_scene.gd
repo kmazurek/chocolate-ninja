@@ -76,10 +76,13 @@ func _on_got_seen(p: Vector2):
 	var camera: Camera2D = get_tree().get_first_node_in_group("camera")
 	camera.position = p
 	camera.zoom = Vector2(2, 2)
+	camera.rotation = PI / 16
 	await get_tree().create_timer(0.33).timeout
 	camera.zoom = Vector2(4, 4)
+	camera.rotation = -PI / 16
 	await get_tree().create_timer(0.33).timeout
 	camera.zoom = Vector2(8, 8)
+	camera.rotation = PI / 32
 	await get_tree().create_timer(1.0).timeout
 	restart_level()
 
