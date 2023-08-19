@@ -10,9 +10,6 @@ extends Node2D
 func _ready():
 	switch_color(Common.ChocolateColor_Light)
 
-
-	
-
 func switch_color(color: String):
 	match color:
 		Common.ChocolateColor_Light:
@@ -39,6 +36,9 @@ func _on_body_player_state_updated(old_state: Common.PlayerState, new_state: Com
 			animation_name = "run"
 		Common.PlayerState.JUMPING:
 			animation_name = "jump_fly"
+		Common.PlayerState.LEAVING:
+			active_anim_player.play("end_level", -1, 2)
+			return
 	active_anim_player.play(animation_name)
 
 

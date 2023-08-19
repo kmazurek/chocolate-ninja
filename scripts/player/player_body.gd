@@ -18,7 +18,7 @@ signal player_state_updated(old_state: Common.PlayerState, new_state: Common.Pla
 
 
 func _physics_process(delta):
-	if not seen:
+	if not seen and current_state != Common.PlayerState.LEAVING:
 		apply_gravity(delta)
 		apply_inputs()
 		move_and_slide()
@@ -99,6 +99,11 @@ func try_change_state(new_state: Common.PlayerState):
 		player_state_updated.emit(current_state, new_state)
 		current_state = new_state
 
+func activate_smokebomb():
+	try_change_state(Common.PlayerState.LEAVING)
 
 func _on_player_got_seen(_positiion):
 	seen = true
+
+func is_player() -> bool: 
+	return true

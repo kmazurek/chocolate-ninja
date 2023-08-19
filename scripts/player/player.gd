@@ -44,7 +44,6 @@ func eat_chocolate(c: Area2D):
 	ate_chocolate.emit(c.color)
 	c.queue_free()
 
-
 func check_if_hidden():
 	var player_pos = body.global_position
 	var tile_player_pos = tile_map.local_to_map(player_pos)

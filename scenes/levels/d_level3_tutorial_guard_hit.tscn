@@ -43,7 +43,3 @@ theme_override_font_sizes/font_size = 10
 text = "Press R 
 to restart"
 horizontal_alignment = 1
-
-[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_ate_chocolate" flags=18]
-[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body" method="_on_player_got_seen" flags=18]
-[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_got_seen" flags=18]

@@ -53,6 +53,7 @@ func _process(_delta):
 
 
 func _on_end_entered():
+	await get_tree().create_timer(0.9).timeout
 	if done:
 		if current_level_index == len(levels) - 1:
 			remove_child(current_level)
