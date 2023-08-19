@@ -49,6 +49,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 script = ExtResource("6_8t007")
 
 [connection signal="ate_chocolate" from="." to="body/Animations" method="_on_player_ate_chocolate"]
