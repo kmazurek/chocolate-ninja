@@ -40,8 +40,8 @@ offset_bottom = 87.0
 theme_override_constants/line_spacing = -4
 theme_override_fonts/font = ExtResource("2_lxh4i")
 theme_override_font_sizes/font_size = 10
-text = "stun guard
-press x"
+text = "Press R 
+to restart"
 horizontal_alignment = 1
 
 [connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_ate_chocolate" flags=18]

@@ -7,7 +7,7 @@ var done: bool = false
 
 var levels: Array = [
 	preload("res://scenes/levels/d_level0_tutorial_eat_chocolate.tscn"),
-	preload("res://scenes/levels/d_level1_tutorial_jumps.tscn"),	
+	preload("res://scenes/levels/d_level1_tutorial_jumps.tscn"),
 	preload("res://scenes/levels/d_level2_tutorial_guard.tscn"),
 	preload("res://scenes/levels/d_level3_tutorial_guard_hit.tscn"),
 	preload("res://scenes/levels/d_level4.tscn"),
@@ -53,7 +53,6 @@ func _process(_delta):
 
 
 func _on_end_entered():
-	print("end_entered")
 	if done:
 		if current_level_index == len(levels) - 1:
 			remove_child(current_level)
