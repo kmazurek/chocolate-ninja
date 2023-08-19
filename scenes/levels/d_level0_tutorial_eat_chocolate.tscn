@@ -43,3 +43,7 @@ horizontal_alignment = 1
 position = Vector2(2.08165e-12, 10)
 ignore_rotation = false
 script = ExtResource("3_gnckw")
+
+[connection signal="ate_chocolate" from="TileMap/@Node2D@37045" to="TileMap/@Node2D@37045/body/Animations" method="_on_player_ate_chocolate" flags=18]
+[connection signal="got_seen" from="TileMap/@Node2D@37045" to="TileMap/@Node2D@37045/body" method="_on_player_got_seen" flags=18]
+[connection signal="got_seen" from="TileMap/@Node2D@37045" to="TileMap/@Node2D@37045/body/Animations" method="_on_player_got_seen" flags=18]

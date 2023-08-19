@@ -54,6 +54,8 @@ func check_if_hidden():
 			hiding = data == color
 		else:
 			hiding = false
+		if data == "both":
+			hiding = true
 	else: 
 		hiding = "dark" == color
 		
