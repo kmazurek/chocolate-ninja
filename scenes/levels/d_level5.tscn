@@ -30,3 +30,7 @@ layer_2/tile_data = PackedInt32Array(327670, 131072, 0, 327671, 196608, 0, 32767
 offset = Vector2(2.08165e-12, -6)
 ignore_rotation = false
 script = ExtResource("2_ld1xf")
+
+[connection signal="ate_chocolate" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_ate_chocolate" flags=18]
+[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body" method="_on_player_got_seen" flags=18]
+[connection signal="got_seen" from="TileMap/player" to="TileMap/player/body/Animations" method="_on_player_got_seen" flags=18]
