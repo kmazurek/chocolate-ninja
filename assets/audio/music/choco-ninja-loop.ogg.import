@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/choco-ninja-loop.ogg-e129bf11fbbfa2170a5193ca
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
